@@ -134,7 +134,7 @@ STATIC_ROOT = STATIC_ROOT_DIR if STATIC_ROOT_DIR != "" else BASE_DIR / "StaticRo
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = '/media/'
+MEDIA_URL = MEDIA_ROOT_DIR if MEDIA_ROOT_DIR != "" else BASE_DIR / '/media/'
 
 if USE_AWS:
     AWS_S3_FILE_OVERWRITE = False

@@ -21,11 +21,12 @@ import Pages.views
 from ShoreCapital import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    re_path(r'^referral/.*$', Pages.views.ReferralView.as_view(), name="referral"),
-    path('career/', Pages.views.CareerView.as_view(), name="career"),
-    path('sell/', Pages.views.SellView.as_view(), name="sell"),
-    path('buy/', Pages.views.BuyView.as_view(), name="buy"),
-    path('', Pages.views.HomeView.as_view(), name="home"),
+                  path('admin/', admin.site.urls),
+                  re_path(r'^referral/.*$', Pages.views.ReferralView.as_view(), name="referral"),
+                  path('career/', Pages.views.CareerView.as_view(), name="career"),
+                  path('sell/', Pages.views.SellView.as_view(), name="sell"),
+                  path('buy/', Pages.views.BuyView.as_view(), name="buy"),
+                  path('', Pages.views.HomeView.as_view(), name="home"),
 
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL,
+                                                                                           document_root=settings.MEDIA_ROOT)
