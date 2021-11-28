@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = IS_PROD == 0
 
-ALLOWED_HOSTS = ["13.58.94.197", "www.shorecapital.net"]
+ALLOWED_HOSTS = ["13.58.94.197", "www.shorecapital.net", "*"]
 
 # Application definition
 

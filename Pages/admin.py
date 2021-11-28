@@ -39,6 +39,7 @@ class ImageContentInline(nested_admin.nested.NestedStackedInline):
 class PageSectionList(nested_admin.nested.NestedStackedInline):
     model = PageSection
     extra = False
+    fields = ["name", "page"]
     inlines = [TextContentInline, ImageContentInline]
 
 

@@ -84,6 +84,12 @@ class PageComponent(TimestampAbstract):
     def __str__(self):
         return self.name
 
+    def save(self, *args, **kwargs):
+        if (not self.slug) and self.name:
+            self.slug = create_underscore_slug(self.name)
+
+        super(PageComponent, self).save(*args, **kwargs)
+
 
 # End
 
@@ -118,6 +124,9 @@ class TextContentAbstract(TimestampAbstract):
     def save(self, *args, **kwargs):
         if self.image:
             self.image = File(compress_image(self.image), self.image.name)
+
+        if (not self.slug) and self.name:
+            self.slug = create_underscore_slug(self.name)
 
         super(TextContentAbstract, self).save(*args, **kwargs)
 
@@ -175,6 +184,7 @@ class SectionImageContent(TimestampAbstract):
             self.image = File(compress_image(self.image), self.image.name)
 
         super(SectionImageContent, self).save(*args, **kwargs)
+
 
 # Component Text Content
 # Start
