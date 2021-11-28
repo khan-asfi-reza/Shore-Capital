@@ -16,6 +16,8 @@ EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "")
 WHITELIST_URL = os.environ.get("WHITELIST_URL", "http:://localhost:3000")
 TEST_EMAIL = os.environ.get("TEST_EMAIL", "")
 USE_AWS = int(os.environ.get("USE_AWS", 0)) == 1
+STATIC_ROOT_DIR = os.environ.get("STATIC_ROOT", "")
+
 
 if USE_AWS:
     AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_ID", "")

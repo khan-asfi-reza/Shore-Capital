@@ -127,7 +127,7 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = BASE_DIR / 'Media'
 
-STATIC_ROOT = BASE_DIR / "StaticRoot"
+STATIC_ROOT = STATIC_ROOT_DIR if STATIC_ROOT_DIR != "" else BASE_DIR / "StaticRoot"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
