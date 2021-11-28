@@ -2,6 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% for meta_tag in meta_tags %}
+        {{ meta_tag.tag|safe }}
+    {% endfor %}
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}"/>
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width,initial-scale=1'>
 	<title>Shore Capital Referral Program</title>

@@ -3,9 +3,9 @@ import string
 
 from fontawesome_5 import Icon
 
-from Pages.const import PAGES, CLASS_PAGE_COMPONENTS
+from Pages.const import PAGES, CLASS_PAGE_COMPONENTS, DEFAULT_META_TAG
 from Pages.models.page import Page, PageSection, SectionTextContent, \
-    PageComponent, create_underscore_slug, ComponentTextContent, SectionImageContent
+    PageComponent, create_underscore_slug, ComponentTextContent, SectionImageContent, MetaTag
 from ShoreCapital.settings import STATICFILES_DIRS
 from django.core.files.uploadedfile import UploadedFile
 
@@ -90,3 +90,8 @@ def create_default_pages():
         # Check if contents
         if contents:
             create_content(ComponentTextContent, contents, component=comp, )
+
+    for tags in DEFAULT_META_TAG:
+        MetaTag.objects.create(
+            **tags
+        )

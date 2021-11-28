@@ -647,3 +647,10 @@ TESTIMONIAL_COMPONENT = {
 }
 
 CLASS_PAGE_COMPONENTS = [CONTACT_US_COMPONENT, TESTIMONIAL_COMPONENT]
+
+DEFAULT_META_TAG = [
+    {
+        "name": "Facebook Domain",
+        "tag": "<meta name='facebook-domain-verification' content='dvvny11xc1wcp14oenqctox11g6q29' />"
+    }
+]
