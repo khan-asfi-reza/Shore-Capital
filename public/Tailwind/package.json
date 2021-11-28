@@ -1,0 +1,18 @@
+{
+  "name": "shorecapital",
+  "version": "1.0.0",
+  "description": "Shore Capital Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx tailwindcss -i ./css/tailwind.css -o ../Static/css/style.css -w",
+    "build": "npx tailwindcss -i ./css/tailwind.css -o ../Static/css/style.css"
+  },
+  "author": "Khan Asfi Reza",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.3",
+    "tailwindcss": "^2.2.19"
+  }
+}

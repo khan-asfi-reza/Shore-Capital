@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+
+.career-bg-image{
+    background-image: url("/static/img/home_career.jpg");
+    height: 70vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.contact-bg{
+    background-image: url("/static/img/contact.jpg");
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.animated-input, .animated-textarea{
+    @apply w-full relative pt-6 mt-8;
+}
+.animated-input input{
+    @apply border-none w-full focus:outline-none w-full overflow-hidden text-lg text-textDark;
+}
+.animated-input textarea{
+    @apply border-none w-full focus:outline-none w-full text-lg text-textDark overflow-hidden overflow-y-auto resize-none;
+}
+
+.animated-input label{
+    @apply absolute bottom-0 left-0 transition-all text-lg duration-300 pointer-events-none;
+}
+
+.animated-input input:focus + label, .animated-input input:active + label, .animated-input input:valid + label,
+.animated-input textarea:focus + label, .animated-input textarea:active + label, .animated-input textarea:valid + label{
+    @apply text-base top-0 transition-all duration-300 text-green-600;
+}
+
+.animated-input:focus-within{
+    @apply border-green-600;
+}
+
+
+.grid-responsive-row{
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    @apply bg-gray-300;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    @apply bg-secondary;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    @apply hover:bg-secondaryDeep;
+}

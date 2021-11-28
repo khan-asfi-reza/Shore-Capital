@@ -1,0 +1,13 @@
+<img
+src="
+{% if image.image %}
+{{ image.image.url }}
+{% endif %}
+"
+alt="
+{% if image.alt %}
+{{ image.alt }}
+{% endif %}
+"
+class="{{ class }}"
+>

@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+public/Tailwind/node_modules
+public/Referral/node_modules
+
 # Distribution / packaging
 .Python
 build/
@@ -18,6 +21,9 @@ lib/
 lib64/
 parts/
 sdist/
+.idea
+Media
+.env
 var/
 wheels/
 pip-wheel-metadata/
@@ -32,6 +38,8 @@ MANIFEST
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
+
+**/node_modules
 
 # Installer logs
 pip-log.txt

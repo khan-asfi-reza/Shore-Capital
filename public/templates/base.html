@@ -1,0 +1,188 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    {% for meta_tag in meta_tags %}
+        {{ meta_tag.tag|safe }}
+    {% endfor %}
+    <meta name="facebook-domain-verification" content="dvvny11xc1wcp14oenqctox11g6q29" />
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shore Capital Corporation | Home</title>
+    <meta name="title" content="Shore Capital Corporation | Real Estate">
+    <meta name="description" content="Shore Capital Corporation is more than a Real Estate and Mortgage Brokerage. We offer a variety of mortgage products throughout California.">
+    <meta name="keywords" content="shorecapitalcorporation, realestate, california, mortgage, florida, shorecapital">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static "css/aos.css" %}">
+    </head>
+<body>
+<!--Header Content Start-->
+    <div id="modal" class="{% if formSubmitted %} grid visible {% else %} hidden invisible {% endif %} modal fixed h-full w-full bg-black bg-opacity-50 z-100">
+        <div class="rounded-xl grid place-items-center absolute top-1/2 transform -translate-x-1/2 -translate-y-1/2 left-1/2 w-1/3 h-96 py-4 px-4 bg-white">
+            <button id="cancelCross" class="absolute top-4 right-4 text-red-500 text-xl">
+                <i class="fas fa-times-circle"></i>
+            </button>
+            <div class="flex flex-col justify-between items-center">
+                <div class="text-7xl text-green-500">
+                    <i class="far fa-check-circle"></i>
+                </div>
+                <p class="text-center mt-6 text-xl">Thank you for your message</p>
+                <button id="dismiss" class="px-2 mt-6  py-2 bg-green-500 text-white hover:bg-green-600">Dismiss</button>
+            </div>
+        </div>
+    </div>
+    <header data-aos="fade" id="header" class="bg-primary fixed top-0 left-0 w-full h-16 z-50">
+        <div class="container flex justify-between m-auto h-full">
+            <div class="flex items-center w-64">
+                <a aria-hidden="true" class="w-full" href="#">
+                    <img aria-hidden="true" class="w-full" src="{% static "img/logo.png" %}" alt="Shore Capital Brand">
+                </a>
+            </div>
+            <div class="flex items-center lg:hidden">
+                <button aria-controls="navigation" aria-expanded="false" id="navigationSwitch" class="bg-white text-secondary px-4 py-1 rounded-xl text-xl"><i class="fa fa-bars"></i></button>
+            </div>
+            <!--Navbar Start-->
+            <nav aria-hidden="true" aria-disabled="true" aria-labelledby="navigationSwitch" id="navigation" class="z-50 lg:visible invisible lg:static fixed lg:h-auto lg:w-auto h-full w-1/2 top-0 -right-3/4 lg:bg-auto bg-primary flex lg:flex-row lg:py-0 py-4 lg:px-0 px-4 flex-col lg:justify-between items-center transition-all duration-150">
+                <div class="grid grid-cols-5 lg:hidden w-full">
+                    <button aria-controls="navigation" aria-expanded="true" id="navigationCloseButton" class="text-white text-xl"><i class="far fa-times-circle"></i></button>
+                    <p class="col-span-3 lg:hidden text-center py-2 text-white text-2xl">Menu</p>
+                </div>
+                <hr class="lg:hidden py-2 text-textLight w-full">
+                <a class="no-underline text-textLight lg:w-auto text-center w-full lg:p-4 py-3 text-lg
+                          hover:text-white hover:font-bold hover:bg-secondary
+                          {% if page_name == 'Home' %}
+                                 border-b-2 border-secondary
+                          {% endif %}"
+                   href="{% url 'home' %}">Home</a>
+                <a class="no-underline text-textLight lg:w-auto text-center w-full lg:p-4 py-3 text-lg
+                          hover:text-white hover:bg-secondary hover:font-bold
+                          {% if page_name == 'Buy' %}
+                                 border-b-2 border-secondary
+                          {% endif %}"
+                   href="{% url 'buy' %}">Buy</a>
+                <a class="no-underline text-textLight lg:w-auto text-center w-full lg:p-4 py-3 text-lg
+                          hover:text-white hover:bg-secondary hover:font-bold
+                          {% if page_name == 'Sell' %}
+                                 border-b-2 border-secondary
+                          {% endif %}"
+                   href="{% url 'sell' %}">Sell</a>
+                <a class="no-underline text-textLight lg:w-auto text-center w-full lg:p-4 py-3 text-lg
+                          hover:text-white hover:bg-secondary hover:font-bold
+                          {% if page_name == 'Careers' %}
+                                 border-b-2 border-secondary
+                          {% endif %}"
+                   href="{% url 'career' %}">Careers</a>
+                <a class="no-underline text-textLight lg:w-auto text-center w-full lg:p-4 py-3 text-lg
+                          hover:text-white hover:bg-secondary hover:font-bold
+                          {% if page_name == 'Referral' %}
+                                 border-b-2 border-secondary
+                          {% endif %}"
+                   href="{% url 'referral' %}">Referral</a>
+{#                <a class="no-underline text-textLight lg:w-auto text-center w-full lg:p-4 py-3 text-lg hover:text-white hover:font-bold hover:bg-secondary" href="careers.html">Careers</a>#}
+{#                <a class="no-underline text-textLight lg:w-auto text-center w-full lg:p-4 py-3 text-lg hover:text-white hover:font-bold hover:bg-secondary" href="signup.html">Sign Up</a>#}
+                <a class="no-underline text-textLight lg:w-auto text-center w-full lg:p-4 py-3 text-lg hover:text-white hover:font-bold hover:bg-secondary" href="https://agent.shorecapital.net/mod/members/login.php">Agent Login</a>
+            </nav>
+            <!--Navbar End-->
+        </div>
+    </header>
+<!--Header Content End-->
+<!---------->
+<!--Main Contents-->
+    <main class="mt-14">
+        {% block main %}
+
+        {% endblock %}
+    </main>
+ <!-- Main Section End-->
+<!-- Footer Section Start-->
+    <footer class="bg-primary ">
+
+        <div class="container mx-auto md:px-10 px-5 pt-10 pb-4">
+            <!-- Footer Top Start-->
+            <div class="flex flex-row justify-between">
+                <div class="flex items-center md:w-72 w-64">
+                    <img aria-hidden="true" class="w-full" src="{% static "img/logo.png" %}" alt="Shore Capital Brand">
+                </div>
+                <div class="flex items-center md:w-20 w-16">
+                    <img aria-hidden="true" class="w-full" src="{% static "img/ada.png" %}" alt="Shore Capital Brand">
+                </div>
+            </div>
+            <!-- Footer Top End-->
+
+            <!-- Footer Middle Start-->
+            <div class="flex md:flex-row flex-col justify-between mt-5">
+
+                <!-- Footer Links Start-->
+                <div class="md:mt-0 mt-5">
+                    <div class="flex flex-row">
+                        <a class="no-underline mr-2 text-textLight hover:text-white hover:font-bold" href="{% url 'home' %}">Home</a>
+                        <a class="no-underline mr-2 text-textLight hover:text-white hover:font-bold" href="{% url 'buy' %}">Buy</a>
+                        <a class="no-underline mr-2 text-textLight hover:text-white hover:font-bold" href="{% url 'sell' %}">Sell</a>
+                        <a class="no-underline mr-2 text-textLight hover:text-white hover:font-bold" href="{% url 'career' %}">Careers</a>
+                        <a class="no-underline mr-2 text-textLight hover:text-white hover:font-bold" href="{% url 'referral' %}">Referral</a>
+                        <a class="no-underline mr-2 text-textLight hover:text-white hover:font-bold" href="https://agent.shorecapital.net/mod/members/login.php">Agent Login</a>
+                    </div>
+                    <p class="mt-6 text-textLight text-xs">
+                        With our extensive network and resources, our time is spent making competent people excellent.
+                        <br>
+                        For the right professional Shore Capital is a career upgrade.
+                    </p>
+                </div>
+                <!-- Footer Links End-->
+
+                <!-- Footer Location Info Start-->
+                <div class="md:mt-0 mt-5">
+                    <p class="text-textLight text-lg font-semibold">Contact</p>
+                    <div class="mt-6">
+                        <div class="flex flex-row">
+                            <i class="fa fa-location-arrow text-textLight mr-2"></i>
+                            <p class="text-textLight text-xs">9114 Adams Ave #165 <br> Huntington Beach, CA 92646</p>
+                        </div>
+                        <div class="flex flex-row mt-4">
+                            <i class="fa fa-envelope text-textLight mr-2"></i>
+                            <p class="text-textLight text-xs">info@shorecapital.net</p>
+                        </div>
+                        <div class="flex flex-row mt-4">
+                            <i class="fa fa-phone text-textLight mr-2"></i>
+                            <p class="text-textLight text-xs">+1 800-715-1009</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Location Info End-->
+
+                <!-- Footer Social Links Start-->
+                <div class="flex flex-row md:mt-0 mt-5">
+                    <a class="text-2xl no-underline mr-3 text-textLight hover:text-white hover:font-bold" href="https://www.facebook.com/ShoreCapital">
+                        <i class="text-blue-500 fab fa-facebook"></i>
+                    </a>
+                    <a class="text-2xl no-underline mr-3 text-textLight hover:text-white hover:font-bold" href="https://www.instagram.com/shorecapital/">
+                        <i class="text-pink-600 fab fa-instagram"></i>
+                    </a>
+                    <a class="text-2xl no-underline text-textLight hover:text-white hover:font-bold" href="https://www.linkedin.com/company/shore-capital-corporation/mycompany/">
+                        <i class="fab text-purple-500 fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <!-- Footer Social Links End-->
+            </div>
+            <!-- Footer Middle End-->
+            <div class="mt-6">
+                <p class="text-center text-xs text-textLight">All rights reserved to &copy;Shore Capital Corporation @2021</p>
+            </div>
+        </div>
+    </footer>
+
+    <!--To Top Button Start-->
+    <button id="toTopBtn" aria-label="To Top Button" class="transition-all duration-300 invisible cursor-pointer opacity-0 w-12 h-12 rounded-full bg-secondary text-white text-2xl fixed z-20 bottom-10 right-2">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+    <!--To Top Button End-->
+</body>
+<script src="{% static "js/aos.js" %}"></script>
+<script src="{%  static "js/index.js"  %}"></script>
+</html>

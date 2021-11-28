@@ -1,0 +1,57 @@
+{% load static %}
+
+<section id="contactUs" aria-label="Contact Us" class="contact-bg relative md:h-80vh h-screen-extended">
+    <div class="absolute z-10 w-full h-full top-0 left-0 bg-opacity-85 bg-primary">
+        <div class="container mx-auto py-16">
+            <h2 class="text-center font-medium text-5xl text-white">{{ components.contact_us.header }}</h2>
+            <p class="text-lg text-center mb-16 text-white">{{ components.contact_us.text }}</p>
+            <div class="mt-14 flex md:flex-row justify-between flex-col">
+                <!-- Contact Information Start-->
+                <div data-aos="zoom-in-right" class="grid md:grid-cols-1 md:gap-0 gap-3 grid-responsive-row">
+                    {% for content in components.contact_us.contents %}
+                        <!-- Contact Information Block Start-->
+                        <div aria-label="Our Address" class="flex flex-row ">
+                            <div class="mr-2">
+                                <div class="w-10 h-10 rounded-full bg-white text-secondary grid place-items-center">
+                                    {{ content.icon.as_html }}
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xl text-secondaryOverlay font-medium">{{ content.header }}</p>
+                                <p class="mt-1 text-lg font-normal text-white">{{ content.text|safe }}</p>
+                            </div>
+                        </div>
+                        <!-- Contact Information Block End-->
+                    {% endfor %}
+
+                </div>
+                <!-- Contact Information End-->
+                <!-- Contact Form Start-->
+                <div data-aos="zoom-in"
+                     class="bg-white xl:w-30% lg:30% md:w-1/2 w-11/12 md:mx-0 md:mt-auto mt-10 mx-auto px-6 py-7 rounded-lg">
+                    <form method="post" class="w-full" id="contactForm" action="{{ request.get_full_path  }}">
+                        {% csrf_token %}
+                        <label class="text-3xl font-semibold text-secondary" for="contactForm">Send Message</label>
+                        <div class="group border-b border-gray-600 animated-input">
+                            {{ form.name }}
+                            <label for="{{ form.name.id_for_label }}">Name</label>
+                        </div>
+                        <div class="group border-b border-gray-600 animated-input">
+                            {{ form.email }}
+                            <label for="{{ form.email.id_for_label }}">Email</label>
+                        </div>
+                        <div class="group border-b border-gray-600 animated-input animated-input">
+                            {{ form.message }}
+                            <label for="{{ form.message.id_for_label }}">Message</label>
+                        </div>
+                        <button class="mt-10 px-4 py-2 bg-secondary text-white hover:bg-white hover:text-secondary hover:border-secondary border-transparent border-2 transition-all duration-500">
+                            Send <i class="fa fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Form End-->
+            </div>
+        </div>
+    </div>
+</section>
