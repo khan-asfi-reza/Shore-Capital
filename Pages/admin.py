@@ -3,7 +3,7 @@ from django.contrib import admin
 
 from Contact.models.contact import ContactUsMessage
 from Pages.models.page import Page, PageSection, SectionTextContent, PageComponent, ComponentTextContent, \
-    SectionImageContent
+    SectionImageContent, MetaTag
 
 
 # Contact Us Admin Panel
@@ -88,4 +88,12 @@ class PageComponentAdmin(nested_admin.nested.ModelAdmin):
 
 
 admin.site.register(PageComponent, PageComponentAdmin)
+
+
 # End
+
+class MetaTagAdmin(admin.ModelAdmin):
+    list_display = ["name", "id"]
+
+
+admin.site.register(MetaTag, MetaTagAdmin)
