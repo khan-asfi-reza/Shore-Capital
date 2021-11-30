@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx tailwindcss -i ./css/tailwind.css -o ../Static/css/style.css -w",
-    "build": "npx tailwindcss -i ./css/tailwind.css -o ../Static/css/style.css"
+    "build": "npx tailwindcss -i ./css/tailwind.css -o ../Static/css/style.css",
+    "publish": "postcss ./css/tailwind.css -o ../Static/css/style.min.css"
   },
   "author": "Khan Asfi Reza",
   "license": "ISC",
@@ -14,5 +15,9 @@
     "autoprefixer": "^10.4.0",
     "postcss": "^8.4.3",
     "tailwindcss": "^2.2.19"
+  },
+  "dependencies": {
+    "cssnano": "^5.0.12",
+    "postcss-cli": "^9.0.2"
   }
 }
