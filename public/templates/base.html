@@ -2,9 +2,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-    {% for meta_tag in meta_tags %}
-        {{ meta_tag.tag|safe }}
-    {% endfor %}
     <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}"/>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -21,6 +18,9 @@
     <link rel="stylesheet" href="{% static "css/style.min.css" %}">
     <link rel="stylesheet" href="{% static "css/aos.css" %}">
     <!-- Facebook Pixel Code -->
+    {% for meta_tag in meta_tags %}
+        {{ meta_tag.tag|safe }}
+    {% endfor %}
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
